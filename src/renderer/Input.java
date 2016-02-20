@@ -1,4 +1,4 @@
-package util;
+package renderer;
 
 import java.awt.Component;
 import java.awt.Point;

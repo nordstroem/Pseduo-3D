@@ -1,6 +1,4 @@
-package graphics;
-
-import game.Game;
+package renderer;
 
 import java.awt.Canvas;
 import java.awt.Graphics2D;
@@ -9,8 +7,6 @@ import java.awt.image.BufferedImage;
 import java.awt.image.DataBufferInt;
 
 import javax.swing.JFrame;
-
-import util.Input;
 
 @SuppressWarnings("serial")
 public class FrameLauncher extends Canvas {
@@ -24,7 +20,6 @@ public class FrameLauncher extends Canvas {
 	private JFrame frame;
 	private int[] pixels;
 	private Renderer renderer;
-	private Game game;
 	private Input input;
 
 	//Init the frame and the game object
@@ -40,7 +35,6 @@ public class FrameLauncher extends Canvas {
 		image = new BufferedImage(SCREEN_WIDTH, SCREEN_HEIGHT, BufferedImage.TYPE_INT_RGB);
 		pixels = ((DataBufferInt) image.getRaster().getDataBuffer()).getData();
 		renderer = new Renderer(SCREEN_WIDTH, SCREEN_HEIGHT);
-		game = new Game();
 		input = new Input(this, true);
 	}
 
@@ -50,8 +44,7 @@ public class FrameLauncher extends Canvas {
 		while (true) {
 			input.update();
 
-			game.tick();
-			renderer.render(game, input);
+			renderer.render(input);
 
 			//Get pixels
 			for (int i = 0; i < SCREEN_WIDTH * SCREEN_HEIGHT; i++) {

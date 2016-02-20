@@ -1,4 +1,4 @@
-package util;
+package renderer;
 
 public class Vec2 {
 

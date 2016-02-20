@@ -1,11 +1,6 @@
-package graphics;
-
-import game.Game;
+package renderer;
 
 import java.awt.image.BufferedImage;
-
-import util.Input;
-import util.Vec3;
 
 public class Renderer {
 
@@ -50,7 +45,7 @@ public class Renderer {
 		}
 	}
 
-	public void render(Game game, Input input) {
+	public void render(Input input) {
 		zBuffer = new double[width * height];
 		pollInput(input);
 		rCos = Math.cos(Math.toRadians(rot));

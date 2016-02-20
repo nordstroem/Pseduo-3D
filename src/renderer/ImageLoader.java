@@ -1,4 +1,4 @@
-package graphics;
+package renderer;
 
 import java.awt.Graphics;
 import java.awt.image.BufferedImage;
